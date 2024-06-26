@@ -9,7 +9,7 @@ PROJECT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 PROJECT_NAME := kraken_dc
 PYTHON_INTERPRETER := $(shell which python)
 VERSION := $(shell $(PYTHON_INTERPRETER) setup.py --version)
-PIP_TOOLS_VERSION := 7.3.0.*
+PIP_TOOLS_VERSION := 7.3.0
 
 ifeq (,$(shell which conda))
 	HAS_CONDA=False
@@ -32,16 +32,6 @@ _install_pip_tools:
 update_requirements: _install_pip_tools
 	sort --unique requirements.in --output requirements.in
 	pip-compile --no-emit-index-url requirements.in
-
-
-## Lint using black
-lint:
-	black $(PROJECT_NAME)
-	black tests
-	isort --profile black $(PROJECT_NAME)
-	isort --profile black tests
-# 	mypy $(PROJECT_NAME)   #Advanced type hinting, excluded for speed.
-	pydocstyle $(PROJECT_NAME) -e --convention=numpy
 
 
 ## Set up python interpreter environment
