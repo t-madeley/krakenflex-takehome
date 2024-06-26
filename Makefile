@@ -34,16 +34,6 @@ update_requirements: _install_pip_tools
 	pip-compile --no-emit-index-url requirements.in
 
 
-## Lint using black
-lint:
-	black $(PROJECT_NAME)
-	black tests
-	isort --profile black $(PROJECT_NAME)
-	isort --profile black tests
-# 	mypy $(PROJECT_NAME)   #Advanced type hinting, excluded for speed.
-	pydocstyle $(PROJECT_NAME) -e --convention=numpy
-
-
 ## Set up python interpreter environment
 create_environment:
 ifeq (True,$(HAS_CONDA))
