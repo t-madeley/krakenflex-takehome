@@ -1,4 +1,4 @@
-# Thomas Madeley Submission rb-modelling-take-home-ml-eng
+# Thomas Madeley Kraken Flex Dynamic Containment Submission
 
 ### Context. 
 
@@ -27,20 +27,11 @@ or building a docker image and uploading to AWS ECR.
 
 ### Modelling
 
-
-
 # Instructions For Use
 
-## Installation
+## Set up and installation
 
-We have create a `Makefile` to house some helpful commands to assist in package installation. 
-
-#### Lint
-Linting is performed with `black and isort`. You can easily lint the repo by running:
-
-```shell
-make lint
-``
+We have created a `Makefile` to house some helpful commands for ease of use. 
 
 #### Create Environment and install the package in editable mode
 Run the command below from the root directory, and answer `y` when asked about installation of dependencies.
@@ -51,7 +42,14 @@ This will automatically create a conda environment and ipykernel kernel for use 
 make create_environment
 ```
 
-If you need to update the dependencies, simply add the new package to `requirements.in` and then run:
+#### Lint
+Linting is performed with `black and isort`. You can lint the repo by running:
+
+```shell
+make lint
+```
+
+If you need to update the dependencies, simply add the new package name(s) to `requirements.in` and then run:
 
 ```shell
 make update_requirements
@@ -65,7 +63,6 @@ This will use pip-tools to search for compatible versions of all dependencies, t
 
 #### Usage
 
-T
 ## The Task
 
 ### In Scope

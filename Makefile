@@ -9,7 +9,7 @@ PROJECT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 PROJECT_NAME := kraken_dc
 PYTHON_INTERPRETER := $(shell which python)
 VERSION := $(shell $(PYTHON_INTERPRETER) setup.py --version)
-PIP_TOOLS_VERSION := 7.3.0.*
+PIP_TOOLS_VERSION := 7.3.0
 
 ifeq (,$(shell which conda))
 	HAS_CONDA=False
